@@ -1,7 +1,9 @@
 # HW03 — Tennis Career Analysis
 
 **Author:** Mireya Abeywardane
-**Course:** STAT 159 — UC Berkeley, Fall 2026  
+
+**Course:** STAT 159 — UC Berkeley, Fall 2026
+
 **Project Start Date:** November 5, 2026
 
 ## Overview

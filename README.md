@@ -28,6 +28,7 @@ The dependencies required to reproduce this project are listed in pyproject.toml
 
 ## Repository Structure
 
+```text
 hw03/
 ├── tennis_career/
 │   ├── __init__.py
@@ -40,7 +41,8 @@ hw03/
 │   ├── __init__.py
 │   ├── test_cleaning.py
 │   ├── test_data.py
-│   └── test_plotting.py
+│   ├── test_plotting.py
+│   └── test_career_matches.py
 │
 ├── figures/
 │   ├── serena_plot.png
@@ -48,24 +50,37 @@ hw03/
 │
 ├── pyproject.toml
 ├── README.md
+├── instructions.md
 └── .gitignore
+```
 
 `tennis_career/` — Python package containing the functions used to retrieve, clean, process, and visualize tennis match data.
+
 `tests/` — Tests that were used to check each function created in the tennis career package.
-`figures/` — Example visualizations of Serena Williams and Rafael Nadal's career matches (format: PNG).
-`pyproject.toml` — Project 02 final report (format: Markdown and PDF).
-`README.md` — Package configuration and Python dependencies.
+
+`figures/` — Example visualizations of Serena Williams's and Rafael Nadal's career matches (format: PNG).
+
+`pyproject.toml` — Package configuration and Python dependencies.
+
+`README.md` — Project overview, installation instructions, usage examples, and reflections.
+
 `.gitignore` — Directories and files absent from version control.
 
 ## Installation
 
 Install the package directly from Github using the following command:
 
+```bash
 pip install git+https://github.com/UCB-stat159-f26/hw03-2-mireyaabey.git
+```
 
 Otherwise, you can install the package locally by cloning or downloading the Git repository:
 
+```bash
+git clone https://github.com/UCB-stat159-f26/hw03-2-mireyaabey.git
+cd hw03-2-mireyaabey
 pip install -e .
+```
 
 ## Usage
 
@@ -98,12 +113,14 @@ Different players can be used within the same function without altering the unde
 
 ## Testing
 
-The functionality of the package was tested using automated tests implemented using Pytest. The tests span across data cleaning, plotting, name formatting for players, and invalid player name inputs. The tests are able to run without accessing the Tennis Abstract because network requests were simulated during testing. 
+The functionality of the package was tested using automated tests implemented using Pytest. The tests span across data cleaning, plotting, name formatting for players, invalid player name inputs, and career match data processing. The tests are able to run without accessing the Tennis Abstract because network requests were simulated during testing. 
 
 In order to test the package, enter the repository directory in the terminal and run:
-	python -m pytest -v
+```bash
+python -m pytest -v
+```
 
-All 9 tests passed in the development of the assignment. 
+All 10 tests passed in the development of the assignment. 
 
 ## Data Source
 

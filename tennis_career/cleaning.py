@@ -45,7 +45,7 @@ def find_opponent_age(match_df, gender):
     return match_df
 
 
-def player_age_at_match(match_df, player_birth_date):
+def find_player_age(match_df, player_birth_date):
     date_of_match = pd.to_datetime(match_df["date"], format="%Y%m%d")
     date_of_birth = pd.to_datetime(player_birth_date, format="%Y%m%d")
 
@@ -53,7 +53,7 @@ def player_age_at_match(match_df, player_birth_date):
 
     return match_df
 
-def player_age_difference(match_df):
+def find_age_difference(match_df):
     match_df = match_df.copy()
 
     match_df["age_difference"] = (match_df["player_age"] - match_df["opponent_age"])

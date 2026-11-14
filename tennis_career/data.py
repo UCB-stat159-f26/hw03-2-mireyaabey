@@ -1,6 +1,5 @@
 import requests
 
-
 def format_player_name(name):
     name = name.strip()
 
@@ -24,7 +23,7 @@ def find_career_data(player_name):
 
     return response.text
 
-def find_player_dob(player_name, gender):
+def find_player_dob(player_name):
     player_name = format_player_name(player_name)
 
     url = f"https://www.tennisabstract.com/jsmatches/{player_name}.js"

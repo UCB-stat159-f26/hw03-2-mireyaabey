@@ -1,8 +1,8 @@
-from .data import fetch_career_data
+from .data import find_career_data
 from .cleaning import (read_match_data, tennis_match_dataframe, find_opponent_age, find_player_age, find_age_difference)
 
 def load_career_data(player_name, player_birth_date, gender):
-    extract_raw_data = fetch_career_data(player_name)
+    extract_raw_data = find_career_data(player_name)
     match_data = read_match_data(extract_raw_data)
 
     match_df = tennis_match_dataframe(match_data)

@@ -13,13 +13,13 @@ def format_player_name(name):
     return name
 
 
-def fetch_career_data(player_name):
+def find_career_data(player_name):
     name = format_player_name(player_name)
     url = f"https://www.tennisabstract.com/jsmatches/{name}Career.js"
 
     response = requests.get(url, timeout=15)
 
     if response.status_code != 200:
-        raise ValueError(f"Could not find player: {player_name}")
+        raise ValueError(f"Player name not found: {player_name}")
 
     return response.text

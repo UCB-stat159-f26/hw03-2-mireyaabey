@@ -26,3 +26,21 @@ def tennis_match_dataframe(matches):
     match_df = pd.DataFrame(match_data, columns=match_columns)
 
     return match_df
+
+def find_opponent_age(match_df, gender):
+    match_df = match_df.copy()
+
+    if gender == "female":
+        date_of_match = pd.to_datetime(match_df["date"], format="%Y%m%d")
+        date_of_birth = pd.to_datetime(match_df["opponent_age_or_dob"], format="%Y%m%d")
+
+        age_in_days = (date_of_match - date_of_birth).dt.days
+        opponent_age = age_in_days / 365.25
+
+    else:
+        opponent_age = pd.to_numeric(match_df["opponent_age_or_dob"])
+
+    match_df["opponent_age"] = opponent_age
+
+    return match_df
+

@@ -1,4 +1,4 @@
-from tennis_career.cleaning import read_match_data, tennis_match_dataframe, find_opponent_age
+from tennis_career.cleaning import (read_match_data, tennis_match_dataframe, find_opponent_age, find_player_age, find_age_difference)
 import pandas as pd
 
 def test_read_match_data():
@@ -38,3 +38,18 @@ def test_male_opponent_age():
 
     assert round(find_age["opponent_age"][0], 2) == 22.26
 
+def test_player_age():
+    match_df = pd.DataFrame({"date": ["19951030"]})
+
+    player_dob = "19810926"
+    player_age = find_player_age(match_df, player_dob)
+
+    assert round(player_age["player_age"][0], 1) == 14.1
+
+
+def test_age_difference():
+    match_df = pd.DataFrame({"player_age": [20.0], "opponent_age": [25.0]})
+
+    age_difference = find_age_difference(match_df)
+
+    assert age_difference["age_difference"][0] == -5.0

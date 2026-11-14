@@ -3,8 +3,13 @@ import requests
 
 def format_player_name(name):
     name = name.strip()
-    name = name.title()
-    name = name.replace(" ", "")
+
+    if " " in name:
+        name = name.title()
+        name = name.replace(" ", "")
+    else:
+        name = name[0].upper() + name[1:]
+
     return name
 
 

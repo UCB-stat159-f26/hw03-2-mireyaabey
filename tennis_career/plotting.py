@@ -8,8 +8,8 @@ def plot_tennis_career_matches(match_df):
     match_losses = match_df[loss_result]
 
     fig, ax = plt.subplots(figsize=(12, 7))
-    ax.scatter(match_wins["player_age"], match_wins["age_difference"], color=blue, label="Win", s=12)
-    ax.scatter(match_losses["player_age"], match_losses["age_difference"], color=purple, label="Loss", s=12)
+    ax.scatter(match_wins["player_age"], match_wins["age_difference"], color="blue", label="Win", s=12)
+    ax.scatter(match_losses["player_age"], match_losses["age_difference"], color="purple", label="Loss", s=12)
 
     ax.axhline(0, color="gray", linewidth=1)
     ax.set_xlabel("Player Age")
